@@ -1,0 +1,17 @@
+.bg2{
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: xx-large;
+    
+}
+.btn{
+    text-align:center; 
+    margin-left: 440px;
+     padding:10px 20px;
+     align-items: center;   
+}
+h2{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-style: italic;
+}

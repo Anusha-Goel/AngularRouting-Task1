@@ -1,0 +1,100 @@
+<h2>FORM VALIDATION</h2>
+<br>
+
+<div class="main">       
+<form name="form" #frm="ngForm" (ngSubmit)="frm.valid && afterSubmit()">
+
+    
+    <div class="form-group">
+        <h5 class="name">Name</h5>
+        <input type="text" class="form-control" id="name"  name="name" [(ngModel)]="user.name" #name="ngModel" required minlength="5"
+            pattern="^[a-zA-Z_ ]+$" placeholder="Enter name">
+    <div *ngIf="name.invalid && (name.touched || name.dirty)">
+        <div *ngIf="name.errors?.['required']">
+           <strong class="strong"> Name is required</strong>
+        </div>
+
+        <div *ngIf="name.errors?.['minlength']">
+            <strong class="strong">Name should have at least 5 characters.</strong>
+        </div>
+        <div *ngIf="name.errors?.['pattern']">
+            <strong class="strong">Name can have alphabets only.</strong>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+        <h5 class="name">Email</h5>
+    
+       <input type="email" name="email" class="form-control" id="email" [(ngModel)]="user.email" #email="ngModel" required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div *ngIf="email.invalid && (email.touched || email.dirty)">
+        <div *ngIf="email.errors?.['required']">
+            <strong class="strong">Email is required</strong>
+        </div>
+
+        <div *ngIf="email.errors?.['pattern']">
+            <strong class="strong">Email is invalid.</strong>
+        </div>
+    </div>
+    
+    <div class="form-group"> 
+        <h5 class="name">Phone number</h5>
+        <input type="text" class="form-control" id="number" name="numberr" [(ngModel)]="user.number" #number="ngModel" required
+            minlength="10" pattern="^[0-9]+$" placeholder="Enter number">
+
+    </div>
+    <div *ngIf="number.invalid && (number.touched || number.dirty)">
+
+        <div *ngIf="number.errors?.['required']">
+            <strong class="strong"> Phone number is required</strong>
+        </div>
+        <div *ngIf="number.errors?.['minlength']">
+            <strong class="strong"> Number should have 10 numbers.</strong>
+        </div>
+        <div *ngIf="number.errors?.['pattern']">
+            <strong class="strong"> Number can't contain alphabets.</strong>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <h5 class="name">Pin Code</h5>
+        <input type="text" name="code" class="form-control" id="code" [(ngModel)]="user.code" #code="ngModel" required minlength="6"
+            pattern="^[0-9]+$" placeholder="Enter pin code">
+
+    </div>
+    <div *ngIf="code.invalid && (code.touched || code.dirty)">
+        <div *ngIf="code.errors?.['required']">
+            <strong class="strong"> Pin Code is required</strong>
+        </div>
+        <div *ngIf="code.errors?.['minlength']">
+            <strong class="strong"> Should have atleat 6 characters.</strong>
+        </div>
+        <div *ngIf="code.errors?.['pattern']">
+            <strong class="strong">Pin Code can't have alphabets.</strong>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <h5 class="name">City</h5>
+        <input type="text" class="form-control" id="city" name="city" [(ngModel)]="user.city" #city="ngModel" required
+         pattern="^[a-zA-Z_ ]+$" placeholder="Enter city">
+
+    </div>
+    <div *ngIf="city.invalid && (city.touched || city.dirty)">
+        <div *ngIf="city.errors?.['required']">
+            <strong class="strong">City is required</strong>
+        </div>
+    
+        <div *ngIf="city.errors?.['pattern']">
+            <strong class="strong"> City is invalid.</strong>
+        </div>
+    </div>
+<div>
+    
+    <button type="submit" class=" btn btn-success" [disabled] ="frm.invalid">Submit</button>
+
+</div>
+</form>
+</div>

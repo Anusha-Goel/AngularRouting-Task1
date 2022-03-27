@@ -1,0 +1,27 @@
+<h2>BANK APPLICATION</h2>
+<br>
+<div class="bg1">
+        <br />
+        <p class="top"><b>Total amount : ₹ </b><span id="bal"><b>{{bal}}</b></span></p>
+        <br>
+        <div class="row">
+            <div class="col-sm-4 ">
+                <h5>Enter Amount</h5>
+               <input type="number" placeholder="enter amount" id="amt" name="amt" [(ngModel)]="amt" class="form-control mb-3" />
+
+                <button type="button" class="btn btn-success" (click)="openAcc();">Account</button>
+            </div> 
+            
+            <div class="col-sm-4">
+                <h5>Withdraw Amount</h5>
+                <input type="number" name="balance" placeholder="Enter withdrawn amount" id="withdrawAmmount" [(ngModel)]="amt1" class="form-control mb-3">
+                <button type="button" class="btn btn-danger" (click)="withdraw();">Withdraw</button>
+            </div>
+            <br />
+            <div class="col-sm-4">
+                <h5>Deposit Amount</h5>
+                <input type="number" placeholder="Enter amount" id="depositeAmmount" [(ngModel)]="amt2"  class="form-control mb-3">
+                <button type="button" class="btn btn-success" (click)="deposit();">Deposit</button>
+            </div>
+        </div>
+    </div>
